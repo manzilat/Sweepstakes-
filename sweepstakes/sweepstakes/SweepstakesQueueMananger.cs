@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace sweepstakes
 {
-    class SweepstakesStackManager
+    class SweepstakesQueueMnanger : ISweepstakesManager
     {
-        Stack<Sweepstakes> sweepstakesStack = new Stack<Sweepstakes>();
+        Queue<Sweepstakes> sweepstakesQueue = new Queue<Sweepstakes>();
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            sweepstakesStack.Push(sweepstakes);
+            sweepstakesQueue.Enqueue(sweepstakes);
         }
+
         public Sweepstakes GetSweepstakes()
         {
-            Sweepstakes sweepstakesFromStack = sweepstakesStack.Pop();
-            return sweepstakesFromStack;
+            Sweepstakes sweepstakesQueueStart = sweepstakesQueue.Dequeue();
+            return sweepstakesQueueStart;
         }
     }
 }

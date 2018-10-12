@@ -8,5 +8,17 @@ namespace sweepstakes
 {
     class SweepstakesFactory
     {
+        public ISweepstakesManager DetermineManager(string managerType)
+        {
+            switch (managerType)
+            {
+                //case "1":
+                //    return new SweepstakesQueueManager();
+                //case "2":
+                //    return new SweepstakesStackManager();
+                //default:
+                //    return DetermineManager(managerType);
+            }
+        }
     }
 }
