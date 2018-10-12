@@ -11,7 +11,9 @@ namespace sweepstakes
         public static string GetUserInput(string message)
         {
             Console.WriteLine(message);
-            Console.Write("Please Enter Selector:   ");
+            Console.Write("Please Enter Selection:   ");
+
+
             string userInput = Console.ReadLine();
             return userInput;
         }
